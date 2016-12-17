@@ -8,12 +8,14 @@ if response.status_code != 200:
 
 data = response.json()
 
-print type(data)
+print "The number of people currently in space is : %i " % data["number"]
 
-print "The number of people currently in space is: %i " % data["number"]
-print "They are:"
-print "Name           |          Craft"
-print "__________________________________"
+max_name = max(len(member["name"]) for member in data["people"])
+max_craft = max(len(member["craft"]) for member in data["people"])
+
+print "They are :\n"
+print "|".join(["Name".ljust(max_name),"Craft"])
+print "-" * max_name + "|" + "-" * (max_craft + 2)
 
 for member in data["people"]:
-    print " %s  | % s " % (member["name"], member["craft"])
+    print "|".join([member["name"].ljust(max_name), member["craft"]])
