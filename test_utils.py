@@ -20,8 +20,8 @@ They are :
 Name          |Craft
 --------------|------------------
 Buzz Aldrin   |Apollo
-Luke Skywalker|Millenium Falcon
 Han Solo      |Millenium Falcon
+Luke Skywalker|Millenium Falcon
 """
         self.assertEqual(result, expected_result)
 
