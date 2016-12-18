@@ -1,5 +1,6 @@
 import requests
 import json
+from operator import itemgetter
 
 def get_who_in_space():
     response = requests.get("http://api.open-notify.org/astros.json")
@@ -20,8 +21,9 @@ def display_who_in_space(data):
     output += "They are :\n"
     output += "|".join(["Name".ljust(max_name),"Craft"]) + "\n"
     output += "-" * max_name + "|" + "-" * (max_craft + 2) + "\n"
-    
-    for member in sorted(data["people"]):
+
+    # sort by craft name, then by name (but does it naively, by first letter)
+    for member in sorted(data["people"], key=itemgetter("craft", "name")):
         output += "|".join([member["name"].ljust(max_name), member["craft"]]) + "\n"
 
     print output

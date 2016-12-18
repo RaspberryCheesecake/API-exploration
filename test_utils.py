@@ -7,6 +7,7 @@ class TestFulfillsChallenge47(unittest.TestCase):
         self.mock_data = {"people" : [
             {"craft": "Millenium Falcon", "name": "Han Solo"},
             {"craft": "Apollo", "name": "Buzz Aldrin"},
+            {"craft": "Imagination", "name": "Buzz Lightyear"},
             {"craft": "Millenium Falcon", "name": "Luke Skywalker"}
             ]}
         self.mock_data["message"] = "success"
@@ -20,6 +21,7 @@ They are :
 Name          |Craft
 --------------|------------------
 Buzz Aldrin   |Apollo
+Buzz Lightyear|Imagination
 Han Solo      |Millenium Falcon
 Luke Skywalker|Millenium Falcon
 """
