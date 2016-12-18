@@ -12,7 +12,7 @@ def get_who_in_space():
 
 def display_who_in_space(data):
     output = ""
-    output += "The number of people currently in space is : %i \n" % data["number"]
+    output += "The number of people currently in space is : %i\n" % data["number"]
     
     max_name = max(len(member["name"]) for member in data["people"])
     max_craft = max(len(member["craft"]) for member in data["people"])
@@ -25,6 +25,7 @@ def display_who_in_space(data):
         output += "|".join([member["name"].ljust(max_name), member["craft"]]) + "\n"
 
     print output
+    return output
 
 if __name__ == "__main__":
     display_who_in_space(get_who_in_space())
