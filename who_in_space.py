@@ -10,8 +10,7 @@ def get_who_in_space():
     data = response.json()
     return data
 
-def display_who_in_space():
-    data = get_who_in_space()
+def display_who_in_space(data):
     print "The number of people currently in space is : %i " % data["number"]
     
     max_name = max(len(member["name"]) for member in data["people"])
@@ -26,4 +25,4 @@ def display_who_in_space():
 
 
 if __name__ == "__main__":
-    display_who_in_space()
+    display_who_in_space(get_who_in_space())
