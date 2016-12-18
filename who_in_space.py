@@ -21,7 +21,7 @@ def display_who_in_space(data):
     output += "|".join(["Name".ljust(max_name),"Craft"]) + "\n"
     output += "-" * max_name + "|" + "-" * (max_craft + 2) + "\n"
     
-    for member in data["people"]:
+    for member in sorted(data["people"]):
         output += "|".join([member["name"].ljust(max_name), member["craft"]]) + "\n"
 
     print output
